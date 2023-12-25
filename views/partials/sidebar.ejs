@@ -1,0 +1,60 @@
+<div class="relative">
+    <nav class="bg-white fixed min-[2000px]:absolute top-0 flex flex-row xl:flex-col justify-between xl:h-full custom-container shadow-sm xl:shadow-none w-full xl:w-fit z-10">
+        <div class="">
+            <a href="/"><img class="h-10 xl:h-12 2xl:h-12 mx-0 xl:mx-5 my-2 xl:my-5" src="/img/Logo.png" alt=""></a>
+            <div class="bg-white xl:bg-transparent hidden xl:grid absolute xl:static top-6 right-0 z-10 rounded-sm py-5 xl:py-0 2xl:py-5 max-h-[800px] xl:max-h-[470px] 2xl:max-h-[750px] overflow-y-auto scroll-h min-w-[195px] scroll-smooth shadow-md xl:shadow-none mt-5 px-5" id="toggle-menu">
+                <a class="menu-list" href="Dashboard - ProjectOverView.html">
+                  <div class="h-4 w-4 flex items-center justify-center"><i class="fa-solid fa-table-columns"></i></div>
+                  <span>Dashboard</span>
+                </a>
+                
+                <a class="menu-list mt-2" href="Dashboard - AllUser.html">
+                  <div class="h-4 w-4 flex items-center justify-center"><i class="fa-solid fa-users"></i></div>
+                  <span>Users</span>
+                </a>
+                <a class="menu-list mt-2" href="Dashboard - Earning.html">
+                  <div class="h-4 w-4 flex items-center justify-center"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                  <span>Earning</span>
+                </a>
+                <a class="menu-list mt-2" href="Dashboard - Categories.html">
+                  <div class="h-4 w-4 flex items-center justify-center"><i class="fa-solid fa-list"></i></div>
+                  <span>Categories</span>
+                </a>
+                <a class="menu-list mt-2" href="Dashboard - Appoinment.html">
+                  <div class="h-4 w-4 flex items-center justify-center"><i class="fa-regular fa-calendar-check"></i></div>
+                  <span>Appoinment</span>
+                </a>
+                <a class="menu-list mt-2" href="Dashboard - Withdraw.html">
+                  <div class="h-4 w-4 flex items-center justify-center"><i class="fa-regular fa-credit-card"></i></div>
+                  <span>Payment</span>
+                </a>
+                <a class="menu-list mt-2" href="Dashboard - UserProfile.html">
+                  <div class="h-4 w-4 flex items-center justify-center"><i class="fa-regular fa-comment-dots"></i></div>
+                  <span>Message</span>
+                </a>
+                <a class="menu-list mt-2" href="#">
+                  <div class="h-4 w-4 flex items-center justify-center"><i class="fa-solid fa-gear"></i></div>
+                  <span>Settings</span>
+                </a>
+                <a class="menu-list mt-2" href="Dashboard - StarProfile.html">
+                  <div class="h-4 w-4 flex items-center justify-center"><i class="fa-solid fa-user"></i></div>
+                  <span>My Profile</span>
+                </a>
+            </div>
+        </div>
+        <!-- Logout Menu Section -->
+        <div class="flex items-center xl:px-5 xl:py-3 gap-32 xl:gap-0">
+            <a class="text-primaryColor hover:text-red-500 hover:bg-transparent flex gap-3 items-center font-medium text-sm px-5 py-3 rounded-l-full" href="/admin/logout">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.75 9V5.25C15.75 4.65326 15.5129 4.08097 15.091 3.65901C14.669 3.23705 14.0967 3 13.5 3H7.5C6.90326 3 6.33097 3.23705 5.90901 3.65901C5.48705 4.08097 5.25 4.65326 5.25 5.25V18.75C5.25 19.3467 5.48705 19.919 5.90901 20.341C6.33097 20.7629 6.90326 21 7.5 21H13.5C14.0967 21 14.669 20.7629 15.091 20.341C15.5129 19.919 15.75 19.3467 15.75 18.75V15M18.75 15L21.75 12M21.75 12L18.75 9M21.75 12H9" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                <span class="hidden md:block">Log Out</span>
+            </a>
+            <button class="block xl:hidden" id="toggle-button">
+                <svg class="-mr-[1px]" height="24px" width="24px" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                  </svg>
+            </button>    
+        </div>
+    </nav>
+</div>
