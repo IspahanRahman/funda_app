@@ -41,9 +41,20 @@ const logout = async(req,res)=>{
     }
 }
 
+const dashboard = async(req,res)=>{
+    try{
+        return res.render('pages/dashboard');
+    }
+    catch(error){
+        console.log(error);
+        return res.status(500).json({message:"Internal Server Error"});
+    }
+}
+
 
 module.exports = {
     loginPage,
     login,
-    logout
+    logout,
+    dashboard
 }
