@@ -1,0 +1,129 @@
+<%-include('../../partials/header')%>
+
+    <!-- Navigation Menu -->
+    <%-include('../../partials/sidebar')%>
+
+
+
+
+    <!-- Right Side Section -->
+    <div class="ml-auto w-full xl:w-5/6 px-0 xl:px-5 py-2 mt-16 xl:mt-0 h-screen">
+      <!-- Project Overview Header -->
+        <section class="flex flex-col xl:flex-row xl:items-center justify-between px-5 py-2 xl:py-5 gap-4">
+            <div class="flex items-center gap-10">
+              <p class="text-tColor2 text-2xl font-bold">View User Profile</p>
+            </div>
+        </section>
+
+        <section class="px-5 py-5">
+          <div class="bg-[#FA51150D] h-48 w-full"></div>
+          <div class="grid grid-cols-1 xl:grid-cols-3 gap-5 mt-5">
+            <div>
+              <section class="bg-backgroundColor grid gap-5 place-self-start w-full rounded p-5">
+                <div class="bg-[#868686] h-44 w-44 -mt-32 rounded overflow-hidden"><img src="<%=user[0].image%>"/></div>
+                <p class="text-tColor2 font-bold">Personal Information</p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Name: </span><%=user[0].name%></p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Username: </span><%=user[0].username%></p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Mobile: </span><%=user[0].mobile%></p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Mail: </span><%=user[0].email%></p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Relationship Status: </span><%=user[0].relationship%></p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Country: </span><%=user[0].country%></p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Gender: </span><%=user[0].gender%></p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Balance: </span><%=user[0].balance%></p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Date of Birth: </span><%=user[0].date_of_birth%></p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Referer Code: </span><%=user[0].referer_code%></p>
+                <p class="text-sm"><span class="text-tColor2 font-bold">Refer Code: </span><%=user[0].refer_code%></p>
+              </section>
+            </div>
+          </div>
+        </section>
+    </div>
+</section>
+
+
+
+
+
+<!-- Header Section Script -->
+<script> 
+  // Menu toggle button 
+    const toggleButton = document.getElementById("toggle-button");
+    const toggleMenu = document.getElementById("toggle-menu");
+    var toggleCounter = 1;
+    toggleButton.onclick = function () {
+      toggleCounter++;
+      if(toggleCounter%2 == 0){
+        toggleMenu.classList.remove("hidden");
+        toggleMenu.classList.add("grid");
+      }
+      else{
+        toggleMenu.classList.remove("grid");
+        toggleMenu.classList.add("hidden");
+      }
+    }
+
+
+  </script>
+
+
+<!-- Accordion Script -->
+<script>
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+  const accordionMenu = document.querySelectorAll('.menu-collapse');
+
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const accordionCollapse = button.nextElementSibling;
+      button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      accordionCollapse.classList.toggle('hidden');
+    });
+  });
+
+  // Set all accordion items to collapsed state by default
+  document.querySelectorAll('.menu-collapse').forEach(collapse => {
+    collapse.classList.add('hidden');
+  });
+
+
+</script>
+
+
+<!-- Table Script -->
+<script>
+  const tableButtons = document.querySelectorAll('.table-button');
+  const tableMenu = document.querySelectorAll('.table-collapse');
+  const tableClose = document.querySelectorAll('.table-close');
+
+  tableButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const tableCollapse = button.nextElementSibling;
+      button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      tableCollapse.classList.toggle('hidden');
+    });
+  });
+
+  tableClose.forEach(button => {
+    button.addEventListener('click', () => {
+      const tableCollapse = button.parentElement.parentElement.parentElement;
+      button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      tableCollapse.classList.toggle('hidden');
+    });
+  });
+
+</script>
+
+<script>
+  const tables = document.querySelectorAll('.table-collapse');
+  window.onclick = function (event) {
+  for (let table of tables){
+  if (event.target == table) {
+    table.classList.toggle('hidden');
+  }
+}
+};
+</script>
+
+
+
+</body>
+</html>

@@ -12,7 +12,7 @@ const login = async (req,res) =>{
     try{
         const {email,password} = req.body; 
         const q= "SELECT *FROM admin WHERE email=?"
-        conn.query(q,[email],(err,result)=>{
+        conn.query(q,[email],async (err,result)=>{
             if (err){
                 throw err;
             }
