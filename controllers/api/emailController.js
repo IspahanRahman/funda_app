@@ -95,7 +95,7 @@ const send_email = async (req, res) => {
                     message: "Email Send Failed"
                 });
             } else {
-                const email = await queryAsync("INSERT INTO emails (sender_user_id,receiver_user_id,from_email,to_email,subject_email,message_email) VALUES(?,?,?,?,?)",[user_id,receiver_user_id,from,to,subject,message]);
+                const email = await queryAsync("INSERT INTO emails (sender_user_id,receiver_user_id,from_email,to_email,subject_email,message_email) VALUES(?,?,?,?,?,?)",[user_id,receiver_user_id,from,to,subject,message]);
                 if(email){
                     return res.status(200).send({
                         status: 'success',
@@ -116,8 +116,34 @@ const send_email = async (req, res) => {
     }
 }
 
+const email_details = async (req,res)=>{
+    try{
+        const {email_id}= req.query;
+        const email_details = await queryAsync("SELECT * FROM emails WHERE email_id=? ",email_id);
+        if(email_details.length==0){
+            return res.status(404).send({
+                status:"fail",
+                message:"Not found",
+                data:""
+            })
+        }
+        else{
+            return res.status(200).send({
+                status:"success",
+                message:"Email found",
+                data:email_details
+            })
+        }
+
+    }catch(error){
+        console.log(error);
+        return res.status(500).json({message:"Internal Server Error"});
+    }
+}
+
 module.exports ={
     send_email,
     send_email_list,
-    receive_email_list
+    receive_email_list,
+    email_details
 }

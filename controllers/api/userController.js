@@ -276,12 +276,45 @@ const userLogin = async (req,res) =>{
 }
 
 
+const get_Account = async(req,res)=>{
+    try{
+        const {user_id}=req.query;
+        const account = await queryAsync("SELECT * FROM users WHERE user_id=?",user_id);
+        if(account.length==0){
+            return res.status(404).send({
+                status:'fail',
+                message:'Not Found',
+                data:''
+            })
+        }
+        else{
+            return res.status(200).send({
+                status:'success',
+                message:"",
+                data:account[0].balance
+            })
+        }
+    }catch(error){
+        console.log(error);
+        return res.status(500).json({message:"Internal Server Error"});
+    }
+}
 
+
+// const user_logout = async (req,res)=>{
+//     try{
+
+//     }catch(error){
+//         console.log(error);
+//         return res.status(500).json({message:"Internal Server Error"});
+//     }
+// }
 
 module.exports = {
     addUser,
     profile,
     profileUpdate,
     userLogin,
+    get_Account
 }
 
