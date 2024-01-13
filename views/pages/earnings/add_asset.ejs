@@ -8,16 +8,17 @@
 
         <section class="flex flex-col xl:flex-row xl:items-center justify-between px-5 py-2 xl:py-5 gap-4">
             <div class="flex items-center gap-10">
-                <p class="text-tColor2 text-2xl font-bold">Create Chat Room</p>
+                <p class="text-tColor2 text-2xl font-bold">Add Asset</p>
             </div>
         </section>
 
 
         <section class="px-5 py-5 max-w-[500px]">
-            <form action="" method="post" class="grid gap-5">
-                <p class="font-bold text-xl text-tColor2 w-full xl:w-fit">Chat Room Information</p>
-                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="room_name" type="text" placeholder="Chat Room Name">
-                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="total_member" cols="100" rows="10" placeholder="Total Room Member">
+            <form action="/admin/add_asset" method="post" class="grid gap-5">
+                <p class="font-bold text-xl text-tColor2 w-full xl:w-fit">Asset Information</p>
+                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="asset_name" type="text" placeholder="Announcement Title">
+                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="asset_img" type="file" placeholder="Announcement Title">
+                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="asset_price" type="text" placeholder="Date">
                 <button class="text-white font-semibold gradient-color border-[1px] rounded px-3 py-2 order-4 xl:order-5 w-full">Submit</button>
             </form>
         </section>

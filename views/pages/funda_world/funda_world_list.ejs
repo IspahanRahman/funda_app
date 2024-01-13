@@ -1,0 +1,155 @@
+<%-include('../../partials/header')%>;
+    <!-- Navigation Menu -->
+    <%-include('../../partials/sidebar')%>
+
+    <div class="ml-auto w-full xl:w-5/6 px-0 xl:px-5 py-2 mt-16 xl:mt-0 h-screen">
+       <!-- Project Overview Header -->
+        <section class="flex flex-col xl:flex-row xl:items-center justify-between px-5 py-2 xl:py-5 gap-4">
+            <div class="flex items-center gap-10">
+              <p class="text-tColor2 text-2xl font-bold">Fun World</p>
+            </div>
+        </section>
+
+        <!-- <section class="px-5 py-5 flex justify-between items-center flex-wrap xl:flex-nowrap gap-5">
+            <p class="font-bold text-xl text-tColor2 w-full xl:w-fit order-1">Categories Information</p>
+        </section> -->
+
+        <section class="mx-5 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-5 my-5 pb-5">
+
+          <a href="/" class="cursor-pointer">
+            <div class="bg-backgroundColor rounded p-5 flex justify-center items-center flex-col">
+              <div class="bg-[#D9D9D9] h-10 w-10 rounded-[50%] overflow-hidden flex justify-center items-center"><i class="fa-solid fa-terminal"></i></div>
+              <p class="text-tColor2 font-bold mt-3">Command</p>
+            </div>
+          </a>
+
+          <a href="/admin/earnings_list" class="cursor-pointer">
+            <div class="bg-backgroundColor rounded p-5 flex justify-center items-center flex-col">
+              <div class="bg-[#D9D9D9] h-10 w-10 rounded-[50%] overflow-hidden flex justify-center items-center"><i class="fa-solid fa-money-bill"></i></div>
+              <p class="text-tColor2 font-bold mt-3">Earnings</p>
+            </div>
+          </a>
+
+          <a href="/" class="cursor-pointer">
+            <div class="bg-backgroundColor rounded p-5 flex justify-center items-center flex-col">
+              <div class="bg-[#D9D9D9] h-10 w-10 rounded-[50%] overflow-hidden flex justify-center items-center"><i class="fa-solid fa-users"></i></div>
+              <p class="text-tColor2 font-bold mt-3">Funda Star</p>
+            </div>
+          </a>
+
+          <a class="cursor-pointer" href="/">
+            <div class="bg-backgroundColor rounded p-5 flex justify-center items-center flex-col">
+              <div class="bg-[#D9D9D9] h-10 w-10 rounded-[50%] overflow-hidden flex justify-center items-center"><i class="fa-solid fa-store"></i></div>
+              <p class="text-tColor2 font-bold mt-3">Funda Store</p>
+            </div>
+          </a>
+
+          <a href="/" class="cursor-pointer">
+            <div class="bg-backgroundColor rounded p-5 flex justify-center items-center flex-col">
+              <div class="bg-[#D9D9D9] h-10 w-10 rounded-[50%] overflow-hidden flex justify-center items-center"><i class="fa-solid fa-chess-board"></i></div>
+              <p class="text-tColor2 font-bold mt-3">Leader Board</p>
+            </div>
+          </a>
+
+          <a href="/admin/purchase_credit_list" class="cursor-pointer">
+            <div class="bg-backgroundColor rounded p-5 flex justify-center items-center flex-col">
+              <div class="bg-[#D9D9D9] h-10 w-10 rounded-[50%] overflow-hidden flex justify-center items-center"><i class="fa-solid fa-cart-shopping"></i></div>
+              <p class="text-tColor2 font-bold mt-3">Purchse Credit</p>
+            </div>
+          </a>
+
+        </section>
+
+    
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- Header Section Script -->
+<script> 
+  // Menu toggle button 
+    const toggleButton = document.getElementById("toggle-button");
+    const toggleMenu = document.getElementById("toggle-menu");
+    var toggleCounter = 1;
+    toggleButton.onclick = function () {
+      toggleCounter++;
+      if(toggleCounter%2 == 0){
+        toggleMenu.classList.remove("hidden");
+        toggleMenu.classList.add("grid");
+      }
+      else{
+        toggleMenu.classList.remove("grid");
+        toggleMenu.classList.add("hidden");
+      }
+    }
+
+
+  </script>
+
+
+<!-- Accordion Script -->
+<script>
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+  const accordionMenu = document.querySelectorAll('.menu-collapse');
+
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const accordionCollapse = button.nextElementSibling;
+      button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      accordionCollapse.classList.toggle('hidden');
+    });
+  });
+
+  // Set all accordion items to collapsed state by default
+  document.querySelectorAll('.menu-collapse').forEach(collapse => {
+    collapse.classList.add('hidden');
+  });
+
+
+</script>
+
+
+<!-- Table Script -->
+<script>
+  const tableButtons = document.querySelectorAll('.table-button');
+  const tableMenu = document.querySelectorAll('.table-collapse');
+  const tableClose = document.querySelectorAll('.table-close');
+
+  tableButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const tableCollapse = button.nextElementSibling;
+      button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      tableCollapse.classList.toggle('hidden');
+    });
+  });
+
+  tableClose.forEach(button => {
+    button.addEventListener('click', () => {
+      const tableCollapse = button.parentElement.parentElement.parentElement;
+      button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      tableCollapse.classList.toggle('hidden');
+    });
+  });
+
+</script>
+
+<script>
+  const tables = document.querySelectorAll('.table-collapse');
+  window.onclick = function (event) {
+  for (let table of tables){
+  if (event.target == table) {
+    table.classList.toggle('hidden');
+  }
+}
+};
+</script>
+
+
+
+</body>
+</html>
