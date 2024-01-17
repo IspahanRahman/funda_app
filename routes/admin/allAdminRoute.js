@@ -10,6 +10,8 @@ const transferCreditRoute = require('./transferCreditRoute');
 const purchaseCreditRoute = require('./purchaseCreditRoute');
 const fundaWorldRoute = require('./fundaWorldRoute');
 const earningsRoute = require('./earningsRoute');
+const fundaStoreRoute = require('./fundaStoreRoute');
+const userDepositManageRoute = require('./userDepositManageRoute');
 
 adminRoute.use(authRoute);
 adminRoute.use(userRoute);
@@ -21,5 +23,7 @@ adminRoute.use(transferCreditRoute);
 adminRoute.use(purchaseCreditRoute);
 adminRoute.use(fundaWorldRoute);
 adminRoute.use(earningsRoute);
+adminRoute.use(fundaStoreRoute);
+adminRoute.use(userDepositManageRoute);
 
 module.exports = adminRoute;
