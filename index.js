@@ -19,7 +19,7 @@ app.use('/admin',adminRoute);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.get('/',adminAuth,async(req,res)=>{
+app.get('/',async(req,res)=>{
     try{
         res.render('pages/index');
     }catch(error){

@@ -6,7 +6,7 @@ const adminAuth = require('../../middlewares/adminAuthMiddleware');
 loginRoute.get('/login',loginPage)
 loginRoute.post('/login',login);
 loginRoute.get('/logout',logout);
-loginRoute.get('/dashboard',adminAuth,dashboard);
+loginRoute.get('/dashboard',dashboard);
 
 
 module.exports = loginRoute;
