@@ -1756,6 +1756,10 @@ h6 {
     height: 3rem;
   }
 
+  .xl\:h-13 {
+    height: 7rem;
+  }
+
   .xl\:h-full {
     height: 100%;
   }
