@@ -36,26 +36,17 @@
                    </tr>
                  </thead>
                  <tbody>
-
+                  <%alerts.forEach((alert)=>{%>
                      <tr>
-                       <td class="text-tColor2">Server issue</td>
-                       <td class="text-tColor2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                       <td class="text-tColor2">2024-01-10</td>
+                       <td class="text-tColor2"><%=alert.alert_title%></td>
+                       <td class="text-tColor2"><%=alert.alert_description%></td>
+                       <td class="text-tColor2"><%=alert.createAt.toLocaleString('en-BD', {timeZone: 'Asia/Dhaka', weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })%></td>
                        <td>
-                         <a href="/admin/update_announcement?announcement_id=" class="bg-green-50 font-semibold text-green-500 px-3 py-2 rounded">Update</a>
-                         <a href="/admin/delete_announcement?announcement_id=" class="gradient-color font-semibold text-white px-3 py-2 rounded">Delete</a>
+                         <a href="/admin/update_alert?alert_id=<%=alert.alert_id%>" class="bg-green-50 font-semibold text-green-500 px-3 py-2 rounded">Update</a>
+                         <a href="/admin/delete_alert?alert_id=<%=alert.alert_id%>" class="gradient-color font-semibold text-white px-3 py-2 rounded">Delete</a>
                        </td>
                      </tr>
-
-                     <tr>
-                        <td class="text-tColor2">Messege Problem</td>
-                        <td class="text-tColor2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus magni neque et</td>
-                        <td class="text-tColor2">2024-01-10</td>
-                        <td>
-                          <a href="/admin/update_announcement?announcement_id=" class="bg-green-50 font-semibold text-green-500 px-3 py-2 rounded">Update</a>
-                          <a href="/admin/delete_announcement?announcement_id=" class="gradient-color font-semibold text-white px-3 py-2 rounded">Delete</a>
-                        </td>
-                      </tr>
+                  <%})%>
 
                  </tbody>
                </table>

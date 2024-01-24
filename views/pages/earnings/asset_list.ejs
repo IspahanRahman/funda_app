@@ -42,54 +42,20 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <%assets.forEach((asset)=>{%>
                     <tr>
-                    <td class="text-tColor2">BMW</td>
+                    <td class="text-tColor2"><%=asset.asset_name%></td>
                     <td><div class="flex items-center gap-2">
-                        <img src="/img/user3.png" alt="" class="h-10 w-10 rounded-[50%]">
+                        <img src="<%=asset.asset_image%>" alt="" class="h-10 w-10 rounded-[50%]">
                         <p class="font-semibold"></p>
                     </div></td>
-                      <td class="text-tColor2">100k</td>
+                      <td class="text-tColor2"><%=asset.asset_price%></td>
                       <td>
-                        <a href="/admin/update_announcement?announcement_id=" class="bg-green-50 font-semibold text-green-500 px-3 py-2 rounded">Update</a>
-                        <a href="/admin/delete_announcement?announcement_id=" class="gradient-color font-semibold text-white px-3 py-2 rounded">Delete</a>
+                        <a href="/admin/update_asset?asset_id=<%=asset.asset_id%>" class="bg-green-50 font-semibold text-green-500 px-3 py-2 rounded">Update</a>
+                        <a href="/admin/delete_asset?asset_id=<%=asset.asset_id%>" class="gradient-color font-semibold text-white px-3 py-2 rounded">Delete</a>
                       </td>
                     </tr>
-                    <tr>
-                        <td class="text-tColor2">BMW</td>
-                        <td><div class="flex items-center gap-2">
-                            <img src="/img/user3.png" alt="" class="h-10 w-10 rounded-[50%]">
-                            <p class="font-semibold"></p>
-                        </div></td>
-                          <td class="text-tColor2">100k</td>
-                          <td>
-                            <a href="/admin/update_announcement?announcement_id=" class="bg-green-50 font-semibold text-green-500 px-3 py-2 rounded">Update</a>
-                            <a href="/admin/delete_announcement?announcement_id=" class="gradient-color font-semibold text-white px-3 py-2 rounded">Delete</a>
-                          </td>
-                    </tr>
-                    <tr>
-                        <td class="text-tColor2">BMW</td>
-                        <td><div class="flex items-center gap-2">
-                            <img src="/img/user3.png" alt="" class="h-10 w-10 rounded-[50%]">
-                            <p class="font-semibold"></p>
-                        </div></td>
-                            <td class="text-tColor2">100k</td>
-                            <td>
-                            <a href="/admin/update_announcement?announcement_id=" class="bg-green-50 font-semibold text-green-500 px-3 py-2 rounded">Update</a>
-                            <a href="/admin/delete_announcement?announcement_id=" class="gradient-color font-semibold text-white px-3 py-2 rounded">Delete</a>
-                            </td>
-                    </tr>
-                    <tr>
-                        <td class="text-tColor2">BMW</td>
-                        <td><div class="flex items-center gap-2">
-                            <img src="/img/user3.png" alt="" class="h-10 w-10 rounded-[50%]">
-                            <p class="font-semibold"></p>
-                        </div></td>
-                            <td class="text-tColor2">100k</td>
-                            <td>
-                            <a href="/admin/update_announcement?announcement_id=" class="bg-green-50 font-semibold text-green-500 px-3 py-2 rounded">Update</a>
-                            <a href="/admin/delete_announcement?announcement_id=" class="gradient-color font-semibold text-white px-3 py-2 rounded">Delete</a>
-                            </td>
-                    </tr>
+                  <%})%>
                 </tbody>
               </table>
             </div>

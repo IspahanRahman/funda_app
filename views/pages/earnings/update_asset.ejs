@@ -8,17 +8,19 @@
 
         <section class="flex flex-col xl:flex-row xl:items-center justify-between px-5 py-2 xl:py-5 gap-4">
             <div class="flex items-center gap-10">
-                <p class="text-tColor2 text-2xl font-bold">Add Asset</p>
+                <p class="text-tColor2 text-2xl font-bold">Update Asset</p>
             </div>
         </section>
 
 
         <section class="px-5 py-5 max-w-[500px]">
-            <form action="/admin/add_asset_post" method="post" enctype="multipart/form-data" class="grid gap-5">
+            <form action="/admin/update_asset_post" method="post" enctype="multipart/form-data" class="grid gap-5">
                 <p class="font-bold text-xl text-tColor2 w-full xl:w-fit">Asset Information</p>
-                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="asset_name" type="text" placeholder="Asset Name" required>
-                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="asset_img" type="file" required>
-                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="asset_price" type="text" placeholder="Asset Price">
+                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="asset_id" type="text" value="<%=asset[0].asset_id%>" hidden>
+                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="asset_name" type="text" value="<%=asset[0].asset_name%>">
+                <img src="<%=asset[0].asset_image%>" alt="" class="h-10 w-10 rounded-[50%]">
+                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="asset_img" type="file">
+                <input class="border-[1px] rounded py-2 px-4 focus:outline-none" name="asset_name" type="text" value="<%=asset[0].asset_price%>">
                 <button class="text-white font-semibold gradient-color border-[1px] rounded px-3 py-2 order-4 xl:order-5 w-full">Submit</button>
             </form>
         </section>

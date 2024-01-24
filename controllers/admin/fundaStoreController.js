@@ -79,6 +79,59 @@ const create_personal_add  = async(req,res)=>{
     }
 }
 
+const gift_buy_reqests  = async(req,res)=>{
+    try{
+        return res.render('pages/funda_store/gift_buy_reqests');
+    }catch(error){
+        console.log(error);
+        return res.status(500).json({message:"Internal Server Error"});
+    }
+}
+
+const gift_accept_list  = async(req,res)=>{
+    try{
+        return res.render('pages/funda_store/gift_accept_list');
+    }catch(error){
+        console.log(error);
+        return res.status(500).json({message:"Internal Server Error"});
+    }
+}
+
+const gift_reject_list  = async(req,res)=>{
+    try{
+        return res.render('pages/funda_store/gift_reject_list');
+    }catch(error){
+        console.log(error);
+        return res.status(500).json({message:"Internal Server Error"});
+    }
+}
+
+const emoji_buy_requests  = async(req,res)=>{
+    try{
+        return res.render('pages/funda_store/emoji_buy_requests');
+    }catch(error){
+        console.log(error);
+        return res.status(500).json({message:"Internal Server Error"});
+    }
+}
+
+const emoji_accept_list  = async(req,res)=>{
+    try{
+        return res.render('pages/funda_store/emoji_accept_list');
+    }catch(error){
+        console.log(error);
+        return res.status(500).json({message:"Internal Server Error"});
+    }
+}
+
+const emoji_reject_list  = async(req,res)=>{
+    try{
+        return res.render('pages/funda_store/emoji_reject_list');
+    }catch(error){
+        console.log(error);
+        return res.status(500).json({message:"Internal Server Error"});
+    }
+}
 
 module.exports ={
     funda_store_list,
@@ -89,6 +142,12 @@ module.exports ={
     emoji_list,
     add_emoji,
     personal_add_list,
-    create_personal_add
+    create_personal_add,
+    gift_buy_reqests,
+    gift_accept_list,
+    gift_reject_list,
+    emoji_buy_requests,
+    emoji_accept_list,
+    emoji_reject_list
     
 }
